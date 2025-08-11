@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% block content %}
+
+<style>
+  .news-banner {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    color: #fef4e6;
+    min-height: 68vh;
+    overflow: hidden; /* evita barra de rolagem se o vídeo ultrapassar */
+    box-shadow: inset 0 0 0 1000px rgba(68, 46, 23, 0.467); /* sombra interna */
+  }
+
+  .news-banner video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .news-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .news-button {
+    background-color: #6a4e23;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .news-button:hover {
+    background-color: #8a6530;
+  }
+</style>
+
+<section class="news-banner" role="banner" aria-label="Destaque de notícia">
+  <!-- Vídeo de fundo -->
+  <video autoplay muted loop playsinline>
+    <source
+      src="../static/picture-movie/movie/12587608_1920_1080_60fps.mp4"
+      type="video/mp4"
+    />
+    Seu navegador não suporta a reprodução de vídeos.
+  </video>
+
+  <div class="conteudo-hero">
+    <h1>Ponto do Cidadão</h1>
+    <p>Facilitar hoje para transformar o amanhã.</p>
+    <button class="botao-hero" type="button" aria-label="Faça sua doação">
+      Faça sua colaboração
+    </button>
+  </div>
+</section>
+
+{% endblock %}

@@ -16,3 +16,4 @@ class Contato(db.Model):
 
     def __repr__(self):
         return f"<Contato {self.primeiro_nome} {self.segundo_nome} - {self.email}>"
+
