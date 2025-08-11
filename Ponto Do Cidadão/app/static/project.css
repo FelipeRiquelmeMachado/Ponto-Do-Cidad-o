@@ -1,0 +1,98 @@
+/*--------------------------------------------- */
+/* Seção Hero */
+
+.hero {
+    position: relative;
+    flex-grow: 1;
+    background-image: url('../static/picture-movie/img/projetos/projeto.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    color: #fef4e6;
+    min-height: 68vh;
+    box-shadow: inset 0 0 0 1000px rgba(68, 46, 23, 0.467);
+}
+
+
+.conteudo-hero {
+    max-width: 470px;
+    text-shadow: 0 2px 8px rgb(0 0 0 / 0.46);
+}
+
+.conteudo-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.conteudo-hero p {
+    margin-bottom: 1.3rem;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+/* Botão do Hero */
+.botao-hero {
+    background-color: #fef4e6;
+    border: none;
+    padding: 0.48rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #3b2e2e;
+    border-radius: 0.15rem;
+    transition: background-color 0.25s ease;
+    box-shadow: 0 0 8px rgb(0 0 0 / 0.3);
+}
+
+.botao-hero:hover {
+    background-color: #e7dac8;
+}
+
+
+.story-section {
+    padding: 60px 20px;
+    text-align: center;
+    color: #000;
+}
+
+.story-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.story-section h2 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.story-section p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #3b2e2e;
+    text-align: justify;
+}
+
+.story-section button {
+    font-size: 14px;
+    padding: 10px 30px;
+    background: transparent;
+    border: 1px solid #1E1E1E;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.story-section button:hover {
+    background-color: #1E1E1E;
+    color: #fff;
+}

@@ -1,0 +1,542 @@
+{% extends "base.html" %}
+{% block content %}
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<style>
+    .main-article {
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+        border-radius: 0.375rem;
+        background-color: #FFF5E9;
+        padding: 1.5rem 1.5rem;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+    }
+
+    .top-info {
+        margin-bottom: 0.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        color: #666666;
+    }
+
+    .top-info .left {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem;
+        font-weight: 600;
+    }
+
+    .top-info a {
+        color: #1a4d8f;
+        text-decoration: none;
+    }
+
+    .top-info a:hover {
+        text-decoration: underline;
+    }
+
+    .top-info button {
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        background-color: #1E1E1E;
+        border: 1px solid #1E1E1E;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .top-info button:hover {
+        background-color: #000000;
+    }
+
+    .top-info button:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #00334e;
+    }
+
+    .title-article {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.875rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #3B2E2E;
+    }
+
+    .title-article svg {
+        height: 1.5rem;
+        width: 1.5rem;
+        stroke: #f68b1e;
+        fill: none;
+    }
+
+    p.subtitle {
+        margin-bottom: 1rem;
+        max-width: 48rem;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #3b2e2e;
+    }
+
+    .content-wrapper {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 1 1 auto;
+    }
+
+    article.prose {
+        max-width: none;
+        font-size: 1rem;
+        color: #3b2e2e;
+    }
+
+    article.prose h2 {
+        font-weight: 700;
+        color: #3B2E2E;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    article.prose p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: #3b2e2e;
+        text-align: justify;
+    }
+
+    button.side-button {
+        position: fixed;
+        right: 0;
+        top: 40%;
+        z-index: 50;
+        display: flex;
+        transform: rotate(-90deg);
+        transform-origin: top right;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0.375rem 0.375rem 0;
+        border: 1px solid #d9d9d9;
+        background-color: white;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: #666666;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    button.side-button:hover {
+        background-color: #f0f0f0;
+    }
+
+    button.side-button:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #00334e;
+    }
+
+    .hero {
+        position: relative;
+        flex-grow: 1;
+        background-image: url('../../static/picture-movie/img/projetos/projeto-praça.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 1rem;
+        color: #fef4e6;
+        min-height: 68vh;
+        box-shadow: inset 0 0 0 1000px rgba(68, 46, 23, 0.467);
+    }
+
+
+    .conteudo-hero {
+        max-width: 470px;
+        text-shadow: 0 2px 8px rgb(0 0 0 / 0.46);
+    }
+
+    .conteudo-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.4rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .conteudo-hero p {
+        margin-bottom: 1.3rem;
+        font-size: 1rem;
+        font-weight: 400;
+        opacity: 0.85;
+    }
+
+    /* Botão do Hero */
+    .botao-hero {
+        background-color: #fef4e6;
+        border: none;
+        padding: 0.48rem 1.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        color: #3b2e2e;
+        border-radius: 0.15rem;
+        transition: background-color 0.25s ease;
+        box-shadow: 0 0 8px rgb(0 0 0 / 0.3);
+    }
+
+    .botao-hero:hover {
+        background-color: #e7dac8;
+    }
+</style>
+
+<section class="hero" role="banner" aria-label="Mensagem de boas-vindas e chamada para ação">
+    <div class="conteudo-hero">
+        <h1>Nossos Projetos</h1>
+        <p>Faça diferente, seja parte dessa mudança.</p>
+        <button class="botao-hero" type="button" aria-label="Faça sua doação">Faça sua colaboração</button>
+    </div>
+</section>
+
+<main class="main-article">
+    <div class="top-info">
+        <div class="left">
+            Desenvolvido por ponto cidadão
+            <span>·</span>
+            <span>2025</span>
+        </div>
+    </div>
+
+    <h1 class="title-article">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#f68b1e"
+            aria-hidden="true" focusable="false">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M10 14l-4.553 2.276A1 1 0 015 15.382V8.618a1 1 0 011.447-.894L10 10m0 0l5 4m-5-4v10" />
+        </svg>
+        Lorem
+    </h1>
+    <p class="subtitle">
+        Lorem
+    </p>
+
+    <div class="content-wrapper">
+
+        <div class="main-content">
+            <article class="prose">
+                <h2 id="resumos">Resumos</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+            </article>
+
+            <article class="prose">
+                <h2 id="introducao">1. introdução</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+            </article>
+
+            <article class="prose">
+                <h2 id="fundamentacao">2. fundamentação</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+            </article>
+
+            <article class="prose">
+                <h2 id="funcoes-pedagogicas">3. funções pedagógicas</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+            </article>
+
+            <article class="prose">
+                <h2 id="metodologia">4. metodologia</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+            </article>
+
+            <article class="prose">
+                <h2 id="analise-estrategias">5. análise das estratégias</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+            </article>
+
+            <article class="prose">
+                <h2 id="analise-questionarios">6. análise dos questionários</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+            </article>
+
+            <article class="prose">
+                <h2 id="consideracoes-finais">7. considerações finais</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+            </article>
+
+            <article class="prose">
+                <h2 id="agradecimentos">Agradecimentos</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit, ipsam nostrum qui
+                    voluptatum sapiente. Tempora dicta, expedita beatae, autem excepturi adipisci quas unde quis illum
+                    deserunt, animi maiores voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                    omnis nemo fugiat ducimus modi voluptates sint numquam nisi quia, dolorem ab qui cum cumque? Sunt
+                    repellat eum recusandae reprehenderit dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Earum hic necessitatibus consectetur repellendus quam dolorum saepe voluptate incidunt eveniet
+                    dignissimos at inventore est iusto sint veniam numquam, sapiente atque facere. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Adipisci, repellat. Quos, fuga sapiente veritatis officia ex
+                    eligendi vero odit fugit tempore voluptates commodi quo nulla deleniti eos ad repudiandae nesciunt!
+                </p>
+            </article>
+
+            <article class="prose">
+                <h2 id="referencias">Referências</h2>
+                <ol class="list-decimal list-inside space-y-2">
+                    <li>M. Ferreira, O.L. Silva Filho, M.A. Moreira, G.B. Franz, K.O. Portugal e D.X.P. Nogueira, Rev.
+                        Bras. Ensino Fís. <b>42</b>, e20200057 (2020).</li>
+                    <li>A.L.D. Froes, Rev. Bras. Ensino Fís. <b>36</b>, 1 (2014).</li>
+                    <li><a href="http://portal.mec.gov.br/seb/arquivos/pdf/CienciasNatureza.pdf"
+                            class="text-blue-600 hover:underline" target="_blank"
+                            rel="noopener noreferrer">http://portal.mec.gov.br/seb/arquivos/pdf/CienciasNatureza.pdf</a>,
+                        acessado 11/03/2020.</li>
+                    <li><a href="http://basenacionalcomum.mec.gov.br/images/historico/BNCC_EnsinoMedio_embaixa_site_110518.pdf"
+                            class="text-blue-600 hover:underline" target="_blank"
+                            rel="noopener noreferrer">http://basenacionalcomum.mec.gov.br/images/historico/BNCC_EnsinoMedio_embaixa_site_110518.pdf</a>,
+                        acessado 11/03/2020.</li>
+                    <li>R.V.L. do Couto, Astronomia no Ensino Médio: uma abordagem simplificada a partir da Teoria da
+                        Relatividade Geral Dissertação de Mestrado, Universidade de Brasília, Brasília (2020).</li>
+                    <li>E.C. Junior, B.S. Fernandes, G.S. Lima, A.J. Siqueira, J.N.M. Paiva, M.G. Santos, J.P. Tavares,
+                        T.V. Souza e T.M.F. Gomes, Rev. Bras. Ensino Fís. <b>40</b>, e5401 (2018).</li>
+                    <li>M.R.R. Sá, Teoria da Relatividade Restrita e Geral ao longo do 1º ano do ensino médio: uma
+                        proposta de inserção.</li>
+                </ol>
+            </article>
+        </div>
+    </div>
+</main>
+
+<button aria-label="Acessibilidade / Reportar erro" class="side-button">
+    Acessibilidade / Reportar erro
+</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('article.prose > h2[id]');
+        const navLinks = document.querySelectorAll('nav.sidebar ul li a');
+
+        function onScroll() {
+            let scrollPos = window.scrollY || window.pageYOffset;
+
+            let currentId = null;
+            for (const section of sections) {
+                const offsetTop = section.offsetTop;
+                if (scrollPos >= offsetTop - 100) {
+                    currentId = section.id;
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', onScroll);
+
+        // Chama uma vez no carregamento da página
+        onScroll();
+    });
+</script>
+
+{% endblock %}

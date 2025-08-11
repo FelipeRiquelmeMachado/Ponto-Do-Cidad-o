@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans&display=swap');
+
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+body {
+    background-color: #fef4e6;
+    color: #3b2e2e;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.fonte-marca {
+    font-weight: 900;
+    font-size: 1.3rem;
+    line-height: 1.1;
+}
+
+.link-nav {
+    position: relative;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #6b3e00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #344229;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s ease;
+}
+
+.link-nav:hover,
+.link-nav:focus {
+    color: #344229;
+}
+
+.link-nav:hover::after,
+.link-nav:focus::after {
+    transform: scaleX(1);
+}
+
+.botao-hamburguer::after {
+    content: none !important;
+}
+
+.sobreposicao {
+    background-color: #fef4e6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 50;
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.botao-fechar {
+    font-size: 1.75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    color: #6b3e00;
+}
+
+.botao-fechar:hover {
+    color: #344229;
+}
+
+/* Navegação dentro da sobreposição */
+.nav-sobreposicao {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    font-size: 1.15rem;
+}
+
+.nav-sobreposicao a {
+    color: #6b3e00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-sobreposicao a:hover {
+    color: #344229;
+}
+
+/* Ícone para login */
+.icone-login {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    color: #3b2e2e;
+    font-weight: 600;
+    user-select: none;
+}
+
+.icone-login svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+}
+
+.icone-login:hover {
+    color: #244734;
+}
+
+/* Navegação dentro da sobreposição */
+.nav-sobreposicao {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    font-size: 1.15rem;
+}
+
+.nav-sobreposicao a {
+    color: #6b3e00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-sobreposicao a:hover {
+    color: #344229;
+}
+
+/* Ícone para login */
+.icone-login {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    color: #3b2e2e;
+    font-weight: 600;
+    user-select: none;
+}
+
+.icone-login svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+}
+
+.icone-login:hover {
+    color: #244734;
+}
+
+/*--------------------------------------------- */
+/* Seção Hero */
+
+.hero {
+    position: relative;
+    flex-grow: 1;
+    background-image: url('../static/picture-movie/img/ajuda.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    color: #fef4e6;
+    min-height: 68vh;
+    box-shadow: inset 0 0 0 1000px rgba(68, 46, 23, 0.467);
+}
+
+
+.conteudo-hero {
+    max-width: 470px;
+    text-shadow: 0 2px 8px rgb(0 0 0 / 0.46);
+}
+
+.conteudo-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.conteudo-hero p {
+    margin-bottom: 1.3rem;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+/* Botão do Hero */
+.botao-hero {
+    background-color: #fef4e6;
+    border: none;
+    padding: 0.48rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #3b2e2e;
+    border-radius: 0.15rem;
+    transition: background-color 0.25s ease;
+    box-shadow: 0 0 8px rgb(0 0 0 / 0.3);
+}
+
+.botao-hero:hover {
+    background-color: #e7dac8;
+}
+
+/* Layout para telas grandes */
+@media (min-width: 1024px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 3rem;
+        background-color: #fef4e6;
+        box-shadow: 0 0 12px rgb(0 0 0 / 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 60;
+    }
+
+    nav.nav-desktop {
+        display: flex;
+        gap: 3rem;
+    }
+
+    nav.nav-desktop a {
+        color: #6b3e00;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    nav.nav-desktop a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0;
+        height: 2px;
+        background-color: #344229;
+        transition: width 0.3s ease;
+    }
+
+    nav.nav-desktop a:hover {
+        color: #344229;
+    }
+
+    nav.nav-desktop a:hover::after {
+        width: 100%;
+    }
+
+    /* Ocultar botão hamburguer em desktop */
+    .botao-hamburguer {
+        display: none;
+    }
+
+    /* Mostrar login e botão de visita no desktop */
+    .area-direita-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+/* Layout para telas pequenas */
+@media (max-width: 1023px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.25rem;
+        background-color: #fef4e6;
+        box-shadow: 0 0 12px rgb(0 0 0 / 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 60;
+    }
+
+    nav.nav-desktop,
+    .area-direita-header {
+        display: none;
+    }
+
+    .botao-hamburguer {
+        cursor: pointer;
+        width: 1.75rem;
+        height: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: none;
+        background: transparent;
+        padding: 0;
+        z-index: 70;
+    }
+
+    .botao-hamburguer span {
+        background-color: #6b3e00;
+        height: 0.22rem;
+        border-radius: 1.25rem;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+
+    .botao-hamburguer:hover span {
+        background-color: #344229;
+    }
+}
+
+
+/* ------------------------------ */
+
+footer {
+    background-color: #1E1E1E;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+footer h1 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+footer .contato,
+footer .redes-sociais {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+footer .redes-sociais {
+    display: inline-flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+footer a svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+footer a:hover {
+    color: #cce4ff;
+    fill: #cce4ff;
+    cursor: pointer;
+}
