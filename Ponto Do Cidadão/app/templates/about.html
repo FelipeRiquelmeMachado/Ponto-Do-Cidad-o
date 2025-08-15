@@ -1,73 +1,53 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}" />
 
-<section class="sobre-section">
-    <div class="sobre-texto">
-        <h2>QUEM SOMOS</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, recusandae nostrum earum sunt sapiente
-            culpa architecto quibusdam, maiores quasi doloremque pariatur? Dolor debitis asperiores exercitationem modi
-            provident adipisci sequi itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo hic eaque
-            tenetur fuga impedit? Fugit quidem molestiae repudiandae architecto nihil provident illo unde! Vero
-            perspiciatis voluptas, ducimus nihil explicabo quia?
+<!-- Article com conteúdo -->
+<section class="content-section">
+  <div class="container">
+    <article class="content-wrapper">
+      <div class="image-section">
+        <img
+          src="../static/picture-movie/img/desenvolvedores/equipe.jpeg"
+          alt="Equipe de desenvolvedores"
+          class="spa-image"
+        />
+      </div>
+
+      <div class="text-section">
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          ea magni, voluptatem cum corrupti reprehenderit nam. Eaque facilis
+          necessitatibus animi, neque dolorem vitae itaque illo culpa, ad atque,
+          sint ducimus? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Accusantium, dignissimos soluta? Adipisci sint sapiente unde quasi
+          accusantium sed quis animi aut quidem ipsam dolores, optio, rem
+          excepturi dolorem in dignissimos!
         </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, recusandae nostrum earum sunt sapiente
-            culpa architecto quibusdam, maiores quasi doloremque pariatur? Dolor debitis asperiores exercitationem modi
-            provident adipisci sequi itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo hic eaque
-            tenetur fuga impedit? Fugit quidem molestiae repudiandae architecto nihil provident illo unde! Vero
-            perspiciatis voluptas, ducimus nihil explicabo quia?
+
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          ea magni, voluptatem cum corrupti reprehenderit nam. Eaque facilis
+          necessitatibus animi, neque dolorem vitae itaque illo culpa, ad atque,
+          sint ducimus? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Accusantium, dignissimos soluta? Adipisci sint sapiente unde quasi
+          accusantium sed quis animi aut quidem ipsam dolores, optio, rem
+          excepturi dolorem in dignissimos!
         </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo rerum exercitationem non totam, placeat
-            numquam? Atque et impedit rem quibusdam est quisquam? Culpa minus eligendi incidunt fuga consectetur
-            corrupti aliquam?
-        </p>
-    </div>
-    <div class="sobre-imagem">
-        <img src="../static/picture-movie/img/equipe.jpg" alt="Skate">
-    </div>
+
+        <div class="cta-section">
+          <a href="#" class="schedule-btn" onclick="openScheduling()">
+            Faça contato com nossa equipe
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>
 
-<section class="desenvolvedor-section">
-    <h2>Nossos Desenvolvedores</h2>
-
-    <div class="desenvolvedor-container">
-        <div class="desenvolvedor-card">
-            <img src="../static/picture-movie/img/desenvolvedores/felipe.jpg" alt="Felipe Riquelme Machado Nobre">
-            <h3>Felipe Riquelme Machado Nobre</h3>
-            <hr>
-            <p>Desenvolvedor Front-end e Back-end</p>
-        </div>
-        <div class="desenvolvedor-card">
-            <img src="../static/picture-movie/img/desenvolvedores/Yuri.jpg" alt="Felipe Riquelme Machado Nobre">
-            <h3>Yuri Gonçalves da Silva</h3>
-            <hr>
-            <p>Design Web</p>
-        </div>
-        <div class="desenvolvedor-card">
-            <img src="../static/picture-movie/img/desenvolvedores/Pedro.jpg" alt="Felipe Riquelme Machado Nobre">
-            <h3>Pedro Paulo da Silva Santos</h3>
-            <hr>
-            <p>Desenvolvedor Front-end</p>
-        </div>
-        <div class="desenvolvedor-card">
-            <img src="../static/picture-movie/img/desenvolvedores/Lucas.jpg" alt="Felipe Riquelme Machado Nobre">
-            <h3>Lucas Carlin de Sousa</h3>
-            <hr>
-            <p>Design Web</p></p>
-        </div>
-        <div class="desenvolvedor-card">
-            <img src="../static/picture-movie/img/desenvolvedores/joão.jpg"Felipe Riquelme Machado Nobre">
-            <h3>João Guilherme Gonçalves da Silva</h3>
-            <hr>
-            <p>Desenvolvedor de Design</p>  
-        </div>
-    </div>
+<!-- Section com efeito parallax -->
+<section class="parallax-section">
+  <div class="overlay"></div>
 </section>
-
-
 
 
 {% endblock %}

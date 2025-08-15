@@ -59,4 +59,3 @@ def news():
 def projectDiretosHumanos():
     return render_template("templates_project/direitos-humanos.html")
 
-

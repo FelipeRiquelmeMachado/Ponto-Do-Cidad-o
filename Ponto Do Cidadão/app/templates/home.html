@@ -1,91 +1,164 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}" />
 
 <body>
-  <section class="hero" role="banner" aria-label="Mensagem de boas-vindas e chamada para ação">
+  <section
+    class="hero"
+    role="banner"
+    aria-label="Mensagem de boas-vindas e chamada para ação"
+  >
     <div class="conteudo-hero">
       <h1>Ponto do Cidadão</h1>
       <p>Facilitar hoje para transformar o amanhã.</p>
-      <button class="botao-hero" type="button" aria-label="Faça sua doação">Faça sua colaboração</button>
+      <button class="botao-hero" type="button" aria-label="Faça sua doação">
+        Faça sua colaboração
+      </button>
     </div>
   </section>
 </body>
 
-
 <section class="card-info" aria-label="Informações de objetivo">
   <h2>Objetivo</h2>
-  <p>Ponto do Cidadão é mais que um projeto: é um movimento de solidariedade. Nosso objetivo é oferecer apoio real e
-    imediato a pessoas em situação de vulnerabilidade, garantindo acesso a alimentos, cobertores e condições básicas
-    para viver com dignidade. Atuamos também no desenvolvimento de projetos que incentivem a autonomia, gerem
-    oportunidades e fortaleçam comunidades, criando pontes entre quem pode ajudar e quem mais precisa. Acreditamos que
-    cada gesto, por menor que pareça, é capaz de transformar vidas. No Ponto do Cidadão, trabalhamos todos os dias para
-    que a esperança chegue a cada esquina, e para que ninguém seja deixado para trás.</p>
+  <p>
+    Ponto do Cidadão é mais que um projeto é um movimento de solidariedade.
+    Nosso objetivo é oferecer apoio real e imediato a pessoas em situação de
+    vulnerabilidade, garantindo acesso a alimentos, cobertores e condições
+    básicas para viver com dignidade. Atuamos também no desenvolvimento de
+    projetos que incentivem a autonomia, gerem oportunidades e fortaleçam
+    comunidades, criando pontes entre quem pode ajudar e quem mais precisa.
+    Acreditamos que cada gesto, por menor que pareça, é capaz de transformar
+    vidas. No Ponto do Cidadão, trabalhamos todos os dias para que a esperança
+    chegue a cada esquina, e para que ninguém seja deixado para trás.
+  </p>
 </section>
 
-<section class="event-section">
-  <div class="event-image">
-    <img src="{{ url_for('static', filename='picture-movie/img/Cobertores para enfrentar o frio.jpg') }}"
-      alt="Varios Cobertores" />
-
-
+<section>
+  <h2></h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">
+        2014-2019<br /><small>Uma mão por outra</small>
+      </div>
+      <div class="timeline-content">
+        <h3>
+          Ação Solidária em São José dos Campos: Marmitas e Cobertores para Mais
+          de 1.000 Pessoas
+        </h3>
+        <p>
+          Entre 2008 e 2014, diversas ações solidárias em São José dos Campos
+          beneficiaram mais de 1.000 pessoas em situação de rua, oferecendo
+          marmitas e cobertores. Essas iniciativas, promovidas por organizações
+          como o Fundo Social de Solidariedade, visaram amenizar o sofrimento
+          durante os períodos mais frios do ano. Além disso, campanhas como a do
+          agasalho, realizadas anualmente, arrecadam cobertores novos ou
+          seminovos em bom estado para distribuição a quem mais precisa .
+        </p>
+        <p class="source">
+          Fonte:
+          <a
+            class="blue-link"
+            href="http://sjc.sp.gov.br/noticias/2025/junho/02/campanha-do-agasalho-foca-na-doacao-de-cobertores/"
+            target="_blank"
+            >Prefeitura de São José dos Campos - Campanha do Agasalho foca na
+            doação de cobertores</a
+          >
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="event-info">
-    <h2>Cobertores para enfrentar o frio</h2>
-    <p class="date-location">
-      Quarta-feira, 12 de Agosto  |  Taubaté
-    </p>
-    <p class="description">
-      Com as temperaturas despencando nos últimos dias, o Ponto do Cidadão promoveu uma ação emergencial de distribuição
-      de cobertores e roupas de frio para pessoas em situação de rua. A mobilização contou com a participação de
-      voluntários que percorreram diferentes pontos da cidade, garantindo que ninguém passasse a noite sem proteção
-      contra o frio. Essa iniciativa é parte da campanha “Aqueça uma Vida”, que seguirá ativa durante todo o inverno.
 
-
-    </p>
-    <a href="https://wa.me/+5512981189538" target="_blank"><button class="do-your-part">Faça sua parte</button></a>
+  <h2>Lorem</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">
+        2012-2013<br /><small>Mãos que iluminam</small>
+      </div>
+      <div class="timeline-content">
+        <h3>Ação Solidária em Taubaté: Franklin Clinton Consegue Emprego</h3>
+        <p>
+          Entre 2012 e 2013, uma iniciativa em Taubaté ajudou Franklin Clinton,
+          uma pessoa em situação de rua, a se reintegrar ao mercado de trabalho.
+          Por meio do apoio de organizações locais e do Fundo Social de
+          Solidariedade, Franklin recebeu orientação profissional, ajuda na
+          elaboração de currículo e encaminhamento para entrevistas. A ação
+          resultou na contratação de Franklin, oferecendo a ele uma oportunidade
+          de estabilidade e dignidade, servindo como exemplo do impacto positivo
+          de projetos sociais voltados à inclusão laboral.
+        </p>
+        <p class="source">
+          Fonte:
+          <a
+            class="blue-link"
+            href="https://www.taubate.sp.gov.br/Erro?aspxerrorpath=/fundo-social-de-solidariedade"
+            target="_blank"
+            >Prefeitura de Taubaté - Programas de Inclusão Social</a
+          >
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="event-section-2">
-  <div class="event-image2">
-    <img src="{{ url_for('static', filename='picture-movie/img/Mutirão de limpeza e revitalização.jpg') }}"
-      alt="Micos dourados" />
-
-  </div>
-  <div class="event-info-2">
-    <h2>Mutirão de limpeza e revitalização</h2>
-    <p class="date-location-2">
-      Domingo, 16 de Agosto  |  São José dos Campos
-    </p>
-    <p class="description-2">
-      O Ponto do Cidadão organizou um mutirão de limpeza e revitalização em uma praça pública que há anos sofria com o
-      abandono. Voluntários trabalharam juntos para recolher lixo, plantar mudas e pintar bancos, devolvendo o espaço
-      para uso seguro e agradável da comunidade. Moradores do bairro também se uniram à iniciativa, fortalecendo o
-      espírito de coletividade e cuidado com o lugar onde vivem.
-    </p>
-    <a href="https://wa.me/+5512981189538" target="_blank"><button class="do-your-part">Faça sua parte</button></a>
+<section class="especialidades">
+  <h2>Nossa Missão</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Objetivo de Ajudar Pessoas</h3>
+      <p>
+        Nosso principal objetivo é ajudar pessoas em situações de
+        vulnerabilidade, entendendo suas dificuldades e oferecendo apoio
+        concreto. Acreditamos que pequenas ações, como doações de alimentos,
+        roupas ou serviços, podem transformar vidas. Nossa missão vai além da
+        caridade: buscamos criar empatia, nos importar genuinamente com cada
+        indivíduo e construir relações humanas baseadas em respeito e
+        solidariedade.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Empatia e Compreensão</h3>
+      <p>
+        A empatia é um dos pilares de nossa atuação, permitindo que
+        compreendamos a realidade de cada pessoa e respeitemos suas histórias.
+        Buscamos reconhecer os desafios individuais e oferecer apoio de forma
+        humana e acolhedora. Entender as dificuldades alheias nos ajuda a agir
+        com mais consciência, criando soluções que realmente fazem diferença e
+        fortalecendo laços de confiança e solidariedade.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Ação Concreta e Solidariedade</h3>
+      <p>
+        Acreditamos que se importar vai além das palavras: é preciso agir. Por
+        isso, promovemos doações, campanhas sociais e projetos que auxiliam
+        diretamente quem precisa. Cada iniciativa é planejada para gerar impacto
+        real, respeitando a dignidade de cada indivíduo. Nosso compromisso com a
+        comunidade se traduz em ações concretas, mostrando que cuidado e atenção
+        podem transformar vidas.
+      </p>
+    </div>
   </div>
 </section>
 
 <section class="container">
   <form action="/" method="POST" novalidate>
     <!-- Mensagens flash -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
     <div>
       {% for category, msg in messages %}
       <div class="flash {{ category }}">{{ msg }}</div>
       {% endfor %}
     </div>
-    {% endif %}
-    {% endwith %}
+    {% endif %} {% endwith %}
 
-    <div class="form-header" style="text-align: center; margin-bottom: 2rem;">
+    <div class="form-header" style="text-align: center; margin-bottom: 2rem">
       <h2>Entre em contato conosco</h2>
-      <p>Se você quer colaborar no projeto, discutir ideias ou explorar oportunidades, entre em contato! Será um prazer
-        trocar experiências e construir juntos.</p>
+      <p>
+        Se você quer colaborar no projeto, discutir ideias ou explorar
+        oportunidades, entre em contato! Será um prazer trocar experiências e
+        construir juntos.
+      </p>
     </div>
 
     <div class="grid-two-cols">

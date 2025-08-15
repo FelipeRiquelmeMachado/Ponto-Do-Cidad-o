@@ -1,118 +1,94 @@
-.sobre-section {
+/* Parallax Section */
+.parallax-section {
+  position: relative;
+  height: 400px;
+  background-image: url("../static/picture-movie/img/pessoas-se-ajudando.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* <-- Efeito parallax */
   display: flex;
-  min-height: 80vh;
-  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.sobre-texto {
-  background-color: #1E1E1E;
-  color: white;
-  padding: 50px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.parallax-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 0 1000px rgba(68, 46, 23, 0.467);
 }
 
-.sobre-texto h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 15px;
-  letter-spacing: 2px;
+/* Content Section */
+.content-section {
+  padding: 60px 20px;
 }
 
-.sobre-texto p {
-  text-align: center;
-  line-height: 1.8;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.image-section {
+  position: relative;
+}
+
+.spa-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.text-section {
+  padding: 20px 0;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #3b2e2e;
   text-align: justify;
 }
 
-.sobre-imagem {
-  flex: 1;
+.cta-section {
+  margin-top: 50px;
+  text-align: center;
 }
 
-.sobre-imagem img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.schedule-btn {
+  font-size: 14px;
+  padding: 10px 30px;
+  background: transparent;
+  border: 1px solid #1e1e1e;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.schedule-btn:hover {
+  background-color: #1e1e1e;
+  color: #fff;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .sobre-section {
-    flex-direction: column;
-    margin: 0;
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-
-  .sobre-texto {
-    padding: 30px;
-  }
-
-  .sobre-imagem img {
-    height: auto;
-  }
-}
-
-
-.desenvolvedor-section {
-  background-color: #1E1E1E;
-  padding: 50px 20px;
-  margin: 20px;
-  text-align: center;
-  color: white;
-}
-
-.desenvolvedor-section h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 15px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-
-.desenvolvedor-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.desenvolvedor-card {
-  max-width: 250px;
-  text-align: center;
-}
-
-.desenvolvedor-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.desenvolvedor-card h3 {
-  margin-top: 15px;
-}
-
-
-.desenvolvedor-card hr {
-  border: none;
-  border-top: 1px solid #c9dbe4;
-  margin: 10px auto;
-  width: 100%;
-}
-
-.desenvolvedor-card p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-
-@media (max-width: 768px) {
-  .desenvolvedor-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .desenvolvedor-section {
-    margin: 0px;
+  .spa-image {
+    height: 300px;
   }
 }
