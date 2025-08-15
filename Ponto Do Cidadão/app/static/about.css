@@ -1,27 +1,3 @@
-/* Parallax Section */
-.parallax-section {
-  position: relative;
-  height: 400px;
-  background-image: url("../static/picture-movie/img/pessoas-se-ajudando.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed; /* <-- Efeito parallax */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.parallax-section .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 0 0 0 1000px rgba(68, 46, 23, 0.467);
-}
-
 /* Content Section */
 .content-section {
   padding: 60px 20px;

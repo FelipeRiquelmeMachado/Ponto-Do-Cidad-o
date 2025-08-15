@@ -13,6 +13,8 @@ body {
     flex-direction: column;
 }
 
+/* ----------------------------- */
+/* Header / Navegação */
 
 .fonte-marca {
     font-weight: 900;
@@ -48,14 +50,41 @@ body {
 }
 
 .link-nav:hover::after,
-.link-nav:focus::after {
+.link-nav:focus::after,
+.link-nav.ativo::after {
     transform: scaleX(1);
 }
 
-.botao-hamburguer::after {
-    content: none !important;
+.link-nav.ativo {
+    color: #344229;
 }
 
+.botao-hamburguer {
+    cursor: pointer;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    background: transparent;
+    padding: 0;
+    z-index: 70;
+}
+
+.botao-hamburguer span {
+    background-color: #6b3e00;
+    height: 0.22rem;
+    border-radius: 1.25rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.botao-hamburguer:hover span {
+    background-color: #344229;
+}
+
+/* Menu mobile */
 .sobreposicao {
     background-color: #fef4e6;
     position: fixed;
@@ -83,7 +112,6 @@ body {
     color: #344229;
 }
 
-/* Navegação dentro da sobreposição */
 .nav-sobreposicao {
     display: flex;
     flex-direction: column;
@@ -97,11 +125,12 @@ body {
     cursor: pointer;
 }
 
-.nav-sobreposicao a:hover {
+.nav-sobreposicao a:hover,
+.nav-sobreposicao a.ativo {
     color: #344229;
 }
 
-/* Ícone para login */
+/* Ícone login */
 .icone-login {
     display: flex;
     align-items: center;
@@ -122,47 +151,8 @@ body {
     color: #244734;
 }
 
-/* Navegação dentro da sobreposição */
-.nav-sobreposicao {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-    font-size: 1.15rem;
-}
-
-.nav-sobreposicao a {
-    color: #6b3e00;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.nav-sobreposicao a:hover {
-    color: #344229;
-}
-
-/* Ícone para login */
-.icone-login {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    cursor: pointer;
-    color: #3b2e2e;
-    font-weight: 600;
-    user-select: none;
-}
-
-.icone-login svg {
-    width: 1.2rem;
-    height: 1.2rem;
-    fill: currentColor;
-}
-
-.icone-login:hover {
-    color: #244734;
-}
-
-/*--------------------------------------------- */
-/* Seção Hero */
+/* ----------------------------- */
+/* Hero */
 
 .hero {
     position: relative;
@@ -180,7 +170,6 @@ body {
     min-height: 68vh;
     box-shadow: inset 0 0 0 1000px rgba(68, 46, 23, 0.467);
 }
-
 
 .conteudo-hero {
     max-width: 470px;
@@ -201,7 +190,6 @@ body {
     opacity: 0.85;
 }
 
-/* Botão do Hero */
 .botao-hero {
     background-color: #fef4e6;
     border: none;
@@ -219,7 +207,9 @@ body {
     background-color: #e7dac8;
 }
 
-/* Layout para telas grandes */
+/* ----------------------------- */
+/* Layout responsivo */
+
 @media (min-width: 1024px) {
     header {
         display: flex;
@@ -239,12 +229,15 @@ body {
     }
 
     nav.nav-desktop a {
-        color: #6b3e00;
         font-size: 1rem;
         font-weight: 500;
         text-decoration: none;
-        transition: color 0.3s ease;
         position: relative;
+        transition: color 0.3s ease;
+    }
+
+    nav.nav-desktop a:hover {
+        color: #344229;
     }
 
     nav.nav-desktop a::after {
@@ -258,20 +251,15 @@ body {
         transition: width 0.3s ease;
     }
 
-    nav.nav-desktop a:hover {
-        color: #344229;
-    }
-
-    nav.nav-desktop a:hover::after {
+    nav.nav-desktop a:hover::after,
+    nav.nav-desktop a.ativo::after {
         width: 100%;
     }
 
-    /* Ocultar botão hamburguer em desktop */
     .botao-hamburguer {
         display: none;
     }
 
-    /* Mostrar login e botão de visita no desktop */
     .area-direita-header {
         display: flex;
         align-items: center;
@@ -279,7 +267,6 @@ body {
     }
 }
 
-/* Layout para telas pequenas */
 @media (max-width: 1023px) {
     header {
         display: flex;
@@ -297,40 +284,15 @@ body {
     .area-direita-header {
         display: none;
     }
-
-    .botao-hamburguer {
-        cursor: pointer;
-        width: 1.75rem;
-        height: 1.75rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border: none;
-        background: transparent;
-        padding: 0;
-        z-index: 70;
-    }
-
-    .botao-hamburguer span {
-        background-color: #6b3e00;
-        height: 0.22rem;
-        border-radius: 1.25rem;
-        width: 100%;
-        transition: background-color 0.3s ease;
-    }
-
-    .botao-hamburguer:hover span {
-        background-color: #344229;
-    }
 }
 
-
-/* ------------------------------ */
+/* ----------------------------- */
+/* Footer */
 
 footer {
     background-color: #1E1E1E;
     color: white;
-    padding: 10px 10px;
+    padding: 10px;
     text-align: center;
 }
 

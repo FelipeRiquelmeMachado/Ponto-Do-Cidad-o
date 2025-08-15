@@ -1,7 +1,6 @@
 /* --------------------------------------------*/
-/* Informações de objetivo */
-
-.card-info {
+/* Seção Objetivo */
+.section-goal {
   max-width: 750px;
   background-color: #fff5e9;
   margin: -60px auto 3rem;
@@ -10,17 +9,16 @@
   position: relative;
   z-index: 10;
   color: #3b2e2e;
-
   text-align: center;
 }
 
-.card-info h2 {
+.section-goal .section-title {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1.1rem;
 }
 
-.card-info p {
+.section-goal .section-text {
   font-size: 1rem;
   line-height: 1.6;
   color: #3b2e2e;
@@ -30,25 +28,15 @@
 }
 
 /* --------------------------------------------*/
-/* Sessão de Noticias */
-
-h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1.1rem;
-  text-align: center;
-}
-
-/* Container principal */
-.timeline {
+/* Seção Linha do Tempo / Histórico */
+.section-timeline {
   width: 90%;
   max-width: 900px;
   margin: 40px auto;
   position: relative;
 }
 
-/* Linha vertical no mobile */
-.timeline::before {
+.section-timeline::before {
   content: "";
   position: absolute;
   top: 0;
@@ -59,7 +47,6 @@ h2 {
   transform: translateX(-50%);
 }
 
-/* Cada item */
 .timeline-item {
   display: flex;
   justify-content: space-between;
@@ -94,14 +81,14 @@ h2 {
   text-align: left;
 }
 
-.timeline-content h3 {
+.timeline-title {
   margin-bottom: 5px;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
-.timeline-content p {
+.timeline-text {
   font-size: 1rem;
   line-height: 1.6;
   color: #3b2e2e;
@@ -110,24 +97,24 @@ h2 {
   text-align: justify;
 }
 
-.blue-link {
-  color: #007bff;
-  text-decoration: none;
-  transition: all 0.3s ease; 
+.timeline-source {
+  padding-top: 5px;
 }
 
-.blue-link:hover {
+.link-blue {
+  color: #007bff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.link-blue:hover {
   text-decoration: underline;
   color: #0056b3;
 }
 
-.source {
-  padding-top: 5px;
-}
-
-/* Responsivo: no mobile, empilhar */
+/* Responsivo: Linha do tempo mobile */
 @media (max-width: 768px) {
-  .timeline::before {
+  .section-timeline::before {
     left: 20px;
   }
 
@@ -142,32 +129,29 @@ h2 {
     transform: none;
   }
 
-  .timeline-date {
+  .timeline-date,
+  .timeline-content {
     width: 100%;
     text-align: left;
     padding-right: 0;
     margin-bottom: 5px;
   }
-
-  .timeline-content {
-    width: 100%;
-  }
 }
 
-/* --------------------------------- */
-
-.especialidades {
+/* --------------------------------------------*/
+/* Seção Missão / Especialidades */
+.section-mission {
   text-align: center;
   padding: 50px 20px;
 }
 
-.especialidades h2 {
+.section-mission .section-title {
   font-size: 24px;
   letter-spacing: 1px;
   font-weight: bold;
 }
 
-.cards {
+.mission-cards {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -175,20 +159,20 @@ h2 {
   flex-wrap: wrap;
 }
 
-.card {
+.mission-card {
   flex: 1 1 300px;
   max-width: 300px;
   text-align: left;
 }
 
-.card h3 {
+.mission-card-title {
   margin-bottom: 5px;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
-.card p {
+.mission-card-text {
   font-size: 1rem;
   line-height: 1.6;
   color: #3b2e2e;
@@ -197,21 +181,80 @@ h2 {
   text-align: justify;
 }
 
-/* Responsivo: Coluna única para telas menores */
+/* Responsivo: Missão coluna única para telas menores */
 @media (max-width: 768px) {
-  .cards {
+  .mission-cards {
     flex-direction: column;
     align-items: center;
   }
 }
 
-/* --------------------------------- */
-/* Sessão de Contato */
 
-.container {
+/* --------------------------------------------*/
+/* Carrossel de Vídeos Responsivo */
+.section-carousel {
+  position: relative;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 10px;
+  /* Espaço lateral para telas pequenas */
+}
+
+.carousel-wrapper video {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  display: none;
+}
+
+.carousel-wrapper video.active {
+  display: block;
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #3b2e2e;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #485f37;
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper video {
+    max-height: 300px;
+  }
+
+  .carousel-dots {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapper video {
+    max-height: 200px;
+  }
+
+  .carousel-dots {
+    margin-top: 6px;
+  }
+}
+
+/* --------------------------------------------*/
+/* Seção Contato */
+.section-contact {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding: 64px 24px;
   display: flex;
   flex-direction: column;
@@ -222,7 +265,7 @@ h2 {
 }
 
 @media (min-width: 768px) {
-  .container {
+  .section-contact {
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -230,7 +273,7 @@ h2 {
   }
 }
 
-form {
+.section-contact form {
   width: 100%;
   max-width: 1000px;
   display: flex;
@@ -243,14 +286,14 @@ form {
   margin-bottom: 2rem;
 }
 
-.form-header h2 {
+.form-title {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #3b2e2e;
 }
 
-.form-header p {
+.form-description {
   font-size: 1rem;
   color: #3b2e2e;
   max-width: 600px;
@@ -258,7 +301,7 @@ form {
   margin-right: auto;
 }
 
-.grid-two-cols {
+.form-grid-two-cols {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem 1.5rem;
@@ -266,22 +309,20 @@ form {
 }
 
 @media (min-width: 768px) {
-  .grid-two-cols {
+  .form-grid-two-cols {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-label {
+.form-group label {
   display: block;
   font-size: 0.75rem;
   margin-bottom: 0.25rem;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea {
+.form-group input,
+.form-group select,
+.form-group textarea {
   width: 100%;
   border: 1px solid black;
   padding: 0.5rem 0.75rem;
@@ -291,43 +332,10 @@ textarea {
   background-color: #fef4e6;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-select:focus,
-textarea:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
   box-shadow: 0 0 0 1px black;
-}
-
-.phone-wrapper {
-  display: flex;
-  align-items: center;
-  border: 1px solid #0b1b3f;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 0.875rem;
-  transition: box-shadow 0.2s ease;
-}
-
-.phone-wrapper:focus-within {
-  box-shadow: 0 0 0 2px #0b1b3f;
-}
-
-.phone-icon {
-  padding-right: 0.5rem;
-  color: #0b1b3f;
-  display: flex;
-  align-items: center;
-}
-
-select {
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  background: transparent;
-  width: 100%;
 }
 
 textarea {
@@ -339,7 +347,7 @@ textarea {
   margin-bottom: 1.5rem;
 }
 
-.btn-submit-wrapper {
+.form-submit-wrapper {
   display: flex;
   justify-content: flex-end;
 }
@@ -357,18 +365,17 @@ textarea {
 }
 
 .btn-submit:hover {
-  background-color: #000000;
+  background-color: #000;
 }
 
+/* --------------------------------------------*/
+/* SweetAlert Tema Escuro */
 .swal-dark-popup {
   background-color: #1e1e1e !important;
   color: white !important;
 }
 
-.swal-dark-title {
-  color: white !important;
-}
-
+.swal-dark-title,
 .swal-dark-content {
   color: white !important;
 }

@@ -39,21 +39,20 @@ def home():
 
         return redirect(url_for('main.home'))
 
-    return render_template("home.html")
+    return render_template("home.html", pagina_ativa="home")
 
 
 @main.route("/about")
 def about():
-    return render_template("about.html")
-
+    return render_template("about.html", pagina_ativa="about")
 
 @main.route("/project")
 def project():
-    return render_template("project.html")
+    return render_template("project.html", pagina_ativa="project")
 
 @main.route("/news")
 def news():
-    return render_template("news.html")
+    return render_template("news.html", pagina_ativa="news")
 
 @main.route("/project/direitos-humanos")
 def projectDiretosHumanos():

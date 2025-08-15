@@ -2,26 +2,23 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}" />
 
-<body>
-  <section
-    class="hero"
-    role="banner"
-    aria-label="Mensagem de boas-vindas e chamada para ação"
-  >
-    <div class="conteudo-hero">
-      <h1>Ponto do Cidadão</h1>
-      <p>Facilitar hoje para transformar o amanhã.</p>
-      <button class="botao-hero" type="button" aria-label="Faça sua doação">
-        Faça sua colaboração
-      </button>
-    </div>
-  </section>
-</body>
+<section class="hero" role="banner" aria-label="Mensagem de boas-vindas e chamada para ação">
+  <div class="conteudo-hero">
+    <h1>Ponto do Cidadão</h1>
+    <p>Facilitar hoje para transformar o amanhã.</p>
+    <button class="botao-hero" type="button" aria-label="Faça sua doação">
+      Faça sua colaboração
+    </button>
+  </div>
+</section>
 
-<section class="card-info" aria-label="Informações de objetivo">
-  <h2>Objetivo</h2>
-  <p>
-    Ponto do Cidadão é mais que um projeto é um movimento de solidariedade.
+<!-- ============================================ -->
+<!-- Seção de Objetivo -->
+<!-- ============================================ -->
+<section class="section-goal" aria-label="Informações de objetivo">
+  <h2 class="section-title">Objetivo</h2>
+  <p class="section-text">
+    Ponto do Cidadão é mais que um projeto, é um movimento de solidariedade.
     Nosso objetivo é oferecer apoio real e imediato a pessoas em situação de
     vulnerabilidade, garantindo acesso a alimentos, cobertores e condições
     básicas para viver com dignidade. Atuamos também no desenvolvimento de
@@ -33,79 +30,74 @@
   </p>
 </section>
 
-<section>
-  <h2></h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-date">
-        2014-2019<br /><small>Uma mão por outra</small>
-      </div>
-      <div class="timeline-content">
-        <h3>
-          Ação Solidária em São José dos Campos: Marmitas e Cobertores para Mais
-          de 1.000 Pessoas
-        </h3>
-        <p>
-          Entre 2008 e 2014, diversas ações solidárias em São José dos Campos
-          beneficiaram mais de 1.000 pessoas em situação de rua, oferecendo
-          marmitas e cobertores. Essas iniciativas, promovidas por organizações
-          como o Fundo Social de Solidariedade, visaram amenizar o sofrimento
-          durante os períodos mais frios do ano. Além disso, campanhas como a do
-          agasalho, realizadas anualmente, arrecadam cobertores novos ou
-          seminovos em bom estado para distribuição a quem mais precisa .
-        </p>
-        <p class="source">
-          Fonte:
-          <a
-            class="blue-link"
-            href="http://sjc.sp.gov.br/noticias/2025/junho/02/campanha-do-agasalho-foca-na-doacao-de-cobertores/"
-            target="_blank"
-            >Prefeitura de São José dos Campos - Campanha do Agasalho foca na
-            doação de cobertores</a
-          >
-        </p>
-      </div>
+<!-- ============================================ -->
+<!-- Seção de Linha do Tempo / Histórico -->
+<!-- ============================================ -->
+<section class="section-timeline" aria-label="Linha do tempo de ações solidárias">
+  <div class="timeline-item">
+    <div class="timeline-date">
+      2014-2019<br /><small>Uma mão por outra</small>
+    </div>
+    <div class="timeline-content">
+      <h3 class="timeline-title">
+        Ação Solidária em São José dos Campos: Marmitas e Cobertores para Mais de 1.000 Pessoas
+      </h3>
+      <p class="timeline-text">
+        Entre 2008 e 2014, diversas ações solidárias em São José dos Campos
+        beneficiaram mais de 1.000 pessoas em situação de rua, oferecendo
+        marmitas e cobertores. Essas iniciativas, promovidas por organizações
+        como o Fundo Social de Solidariedade, visaram amenizar o sofrimento
+        durante os períodos mais frios do ano. Além disso, campanhas como a do
+        agasalho, realizadas anualmente, arrecadam cobertores novos ou
+        seminovos em bom estado para distribuição a quem mais precisa.
+      </p>
+      <p class="timeline-source">
+        Fonte:
+        <a class="link-blue"
+          href="http://sjc.sp.gov.br/noticias/2025/junho/02/campanha-do-agasalho-foca-na-doacao-de-cobertores/"
+          target="_blank">
+          Prefeitura de São José dos Campos - Campanha do Agasalho foca na doação de cobertores
+        </a>
+      </p>
     </div>
   </div>
 
-  <h2>Lorem</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-date">
-        2012-2013<br /><small>Mãos que iluminam</small>
-      </div>
-      <div class="timeline-content">
-        <h3>Ação Solidária em Taubaté: Franklin Clinton Consegue Emprego</h3>
-        <p>
-          Entre 2012 e 2013, uma iniciativa em Taubaté ajudou Franklin Clinton,
-          uma pessoa em situação de rua, a se reintegrar ao mercado de trabalho.
-          Por meio do apoio de organizações locais e do Fundo Social de
-          Solidariedade, Franklin recebeu orientação profissional, ajuda na
-          elaboração de currículo e encaminhamento para entrevistas. A ação
-          resultou na contratação de Franklin, oferecendo a ele uma oportunidade
-          de estabilidade e dignidade, servindo como exemplo do impacto positivo
-          de projetos sociais voltados à inclusão laboral.
-        </p>
-        <p class="source">
-          Fonte:
-          <a
-            class="blue-link"
-            href="https://www.taubate.sp.gov.br/Erro?aspxerrorpath=/fundo-social-de-solidariedade"
-            target="_blank"
-            >Prefeitura de Taubaté - Programas de Inclusão Social</a
-          >
-        </p>
-      </div>
+  <div class="timeline-item">
+    <div class="timeline-date">
+      2012-2013<br /><small>Mãos que iluminam</small>
+    </div>
+    <div class="timeline-content">
+      <h3 class="timeline-title">Ação Solidária em Taubaté: Franklin Clinton Consegue Emprego</h3>
+      <p class="timeline-text">
+        Entre 2012 e 2013, uma iniciativa em Taubaté ajudou Franklin Clinton,
+        uma pessoa em situação de rua, a se reintegrar ao mercado de trabalho.
+        Por meio do apoio de organizações locais e do Fundo Social de
+        Solidariedade, Franklin recebeu orientação profissional, ajuda na
+        elaboração de currículo e encaminhamento para entrevistas. A ação
+        resultou na contratação de Franklin, oferecendo a ele uma oportunidade
+        de estabilidade e dignidade, servindo como exemplo do impacto positivo
+        de projetos sociais voltados à inclusão laboral.
+      </p>
+      <p class="timeline-source">
+        Fonte:
+        <a class="link-blue" href="https://www.taubate.sp.gov.br/Erro?aspxerrorpath=/fundo-social-de-solidariedade"
+          target="_blank">
+          Prefeitura de Taubaté - Programas de Inclusão Social
+        </a>
+      </p>
     </div>
   </div>
 </section>
 
-<section class="especialidades">
-  <h2>Nossa Missão</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Objetivo de Ajudar Pessoas</h3>
-      <p>
+<!-- ============================================ -->
+<!-- Seção de Missão / Especialidades -->
+<!-- ============================================ -->
+<section class="section-mission" aria-label="Nossa missão e objetivos">
+  <h2 class="section-title">Nossa Missão</h2>
+  <div class="mission-cards">
+    <div class="mission-card">
+      <h3 class="mission-card-title">Objetivo de Ajudar Pessoas</h3>
+      <p class="mission-card-text">
         Nosso principal objetivo é ajudar pessoas em situações de
         vulnerabilidade, entendendo suas dificuldades e oferecendo apoio
         concreto. Acreditamos que pequenas ações, como doações de alimentos,
@@ -115,9 +107,9 @@
         solidariedade.
       </p>
     </div>
-    <div class="card">
-      <h3>Empatia e Compreensão</h3>
-      <p>
+    <div class="mission-card">
+      <h3 class="mission-card-title">Empatia e Compreensão</h3>
+      <p class="mission-card-text">
         A empatia é um dos pilares de nossa atuação, permitindo que
         compreendamos a realidade de cada pessoa e respeitemos suas histórias.
         Buscamos reconhecer os desafios individuais e oferecer apoio de forma
@@ -126,9 +118,9 @@
         fortalecendo laços de confiança e solidariedade.
       </p>
     </div>
-    <div class="card">
-      <h3>Ação Concreta e Solidariedade</h3>
-      <p>
+    <div class="mission-card">
+      <h3 class="mission-card-title">Ação Concreta e Solidariedade</h3>
+      <p class="mission-card-text">
         Acreditamos que se importar vai além das palavras: é preciso agir. Por
         isso, promovemos doações, campanhas sociais e projetos que auxiliam
         diretamente quem precisa. Cada iniciativa é planejada para gerar impacto
@@ -140,65 +132,94 @@
   </div>
 </section>
 
-<section class="container">
+<!-- ============================================ -->
+<!-- Seção de Carrossel de Vídeos -->
+<!-- ============================================ -->
+<section class="section-carousel" aria-label="Carrossel de vídeos">
+  <div class="carousel-wrapper">
+    <video class="carousel-video active" autoplay muted loop playsinline>
+      <source src="../static/picture-movie/movie/home/4622519-uhd_3840_2160_24fps.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos.
+    </video>
+    <video class="carousel-video" autoplay muted loop playsinline>
+      <source src="../static/picture-movie/movie/home/6646718-hd_1920_1080_24fps.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos.
+    </video>
+    <video class="carousel-video" autoplay muted loop playsinline>
+      <source src="../static/picture-movie/movie/home/9034146-hd_1920_1080_25fps.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos.
+    </video>
+
+    <div class="carousel-dots">
+      <span class="dot active" onclick="showSlide(0)"></span>
+      <span class="dot" onclick="showSlide(1)"></span>
+      <span class="dot" onclick="showSlide(2)"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- Seção de Formulário de Contato -->
+<!-- ============================================ -->
+<section class="section-contact" aria-label="Formulário de contato">
   <form action="/" method="POST" novalidate>
-    <!-- Mensagens flash -->
-    {% with messages = get_flashed_messages(with_categories=true) %} {% if
-    messages %}
-    <div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-messages">
       {% for category, msg in messages %}
       <div class="flash {{ category }}">{{ msg }}</div>
       {% endfor %}
     </div>
-    {% endif %} {% endwith %}
+    {% endif %}
+    {% endwith %}
 
-    <div class="form-header" style="text-align: center; margin-bottom: 2rem">
-      <h2>Entre em contato conosco</h2>
-      <p>
+    <div class="form-header">
+      <h2 class="form-title">Entre em contato conosco</h2>
+      <p class="form-description">
         Se você quer colaborar no projeto, discutir ideias ou explorar
         oportunidades, entre em contato! Será um prazer trocar experiências e
         construir juntos.
       </p>
     </div>
 
-    <div class="grid-two-cols">
-      <div>
+    <div class="form-grid-two-cols">
+      <div class="form-group">
         <label for="firstName">Primeiro Nome *</label>
         <input type="text" id="firstName" name="firstName" required />
       </div>
-      <div>
+      <div class="form-group">
         <label for="lastName">Segundo Nome *</label>
         <input type="text" id="lastName" name="lastName" required />
       </div>
     </div>
 
-    <div class="mb-6">
+    <div class="form-group">
       <label for="address">Empresa</label>
       <input type="text" id="address" name="address" />
     </div>
 
-    <div class="grid-two-cols">
-      <div>
+    <div class="form-grid-two-cols">
+      <div class="form-group">
         <label for="email">Email *</label>
         <input type="email" id="email" name="email" required />
       </div>
-      <div>
+      <div class="form-group">
         <label for="phone">Telefone *</label>
         <input type="tel" id="phone" name="phone" required />
       </div>
     </div>
 
-    <div class="mb-6">
+    <div class="form-group">
       <label for="subject">Objetivo</label>
       <input type="text" id="subject" name="subject" />
     </div>
 
-    <div class="mb-6">
+    <div class="form-group">
       <label for="message">Digite sua mensagem aqui…</label>
       <textarea id="message" name="message" rows="5"></textarea>
     </div>
 
-    <div class="btn-submit-wrapper">
+    <div class="form-submit-wrapper">
       <button type="submit" class="btn-submit">Enviar</button>
     </div>
   </form>
